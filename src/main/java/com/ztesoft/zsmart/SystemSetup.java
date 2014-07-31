@@ -1,4 +1,4 @@
-package com.ztesoft.zsmart.interview;
+package com.ztesoft.zsmart;
 
 import java.util.List;
 

@@ -15,6 +15,7 @@
 		<jdbc.hsqldb.version></jdbc.hsqldb.version>
 
 		<fastjson.version>1.1.41</fastjson.version>
+		<freemarker.version>2.3.20</freemarker.version>
 	</properties>
 
 	<dependencies>
@@ -48,9 +49,13 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${freemarker.version}</version>
+		</dependency>
 
-
-		<!-- -->
+		<!-- 
 		<dependency>
 			<groupId>org.apache.taglibs</groupId>
 			<artifactId>taglibs-standard-impl</artifactId>
@@ -62,7 +67,14 @@
 			<artifactId>jstl</artifactId>
 			<version>1.1.2</version>
 		</dependency>
-
+		-->
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>interview</finalName>
