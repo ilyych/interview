@@ -12,10 +12,16 @@
 </head>
 <body>
 	<h2>Hello World!</h2>
-	
+	<input type="button" id="btnAjax" value="Ajax getJSON Request" />
 	<script src="js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="js/json3.min.js" type="text/javascript"></script>
+	<script src="js/remote.js" type="text/javascript"></script>
 	
-	
+	<form action="<%=getWebRoot(request) %>/commonQuery" method="post">
+		User ID : <input type="text" name="userId"/> <br/>
+		User Name : <input type="text" name="userName" /> <br/>
+		<input type="submit" value="Submit"/>
+	</form>
 	<script type="text/javascript">
 		<%!
 		public String getWebRoot(HttpServletRequest request)
@@ -32,26 +38,20 @@
 		          strWebRoot += ":" + port;
 		      }
 
-		      strWebRoot +=  request.getContextPath()+"/";
+		      strWebRoot +=  request.getContextPath();
 		  }
 		  return strWebRoot;
 		}
 		%>
 		var g_WebRoot = '<%=getWebRoot(request) %>';
-	
-		//http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?",
-		var json = {
-			serviceName : "QryUser",
-			param : {
-				userId : '1'
-			},
-			page_param : {
-				
-			}
-		};		
-				
-		$.getJSON(g_WebRoot + "/commonQuery", json, function(json) {
-			alert(json);
+		
+		$(function() {
+			$("#btnAjax").click(function() {
+				var params = {userId : 1 , userName : "zhangsan", QQ: ["8888888", "666666"]};
+				Z.remoteQuery("QryUser", function(json) {
+					alert(json);
+				}, params);
+			});
 		});
 	</script>
 </body>

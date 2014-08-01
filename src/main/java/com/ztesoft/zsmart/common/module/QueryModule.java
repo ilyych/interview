@@ -1,37 +1,30 @@
 package com.ztesoft.zsmart.common.module;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.nutz.mvc.adaptor.JsonAdaptor;
-import org.nutz.mvc.annotation.AdaptBy;
 import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Fail;
 import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.annotation.Param;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 
 public class QueryModule {
 	
 	@Ok("json:{quoteName:true, ignoreNull:true}")
 	@Fail("")
 	@At("/commonQuery")
-	@AdaptBy(type=JsonAdaptor.class)
-	public String commonQuery(@Param("serviceName") String serviceName, 
-			@Param("param") String param, 
-			HttpServletRequest request, HttpServletResponse response) {
+	public Object commonQuery(@Param("serviceName") String serviceName, 
+			@Param("parameter") String parameter, @Param("pageInfo") String pageInfo) {
 		
-//		JSONObject jObject = new JSONObject(param);
 		
-		Map<?, ?> pMap = request.getParameterMap();
-		for (Iterator<?> it = pMap.entrySet().iterator(); it.hasNext(); ) {
-			Entry pData = (Entry) it.next();
-			System.out.println(pData.getKey() + " : " + pData.getValue());
-		}
-		return param;
+		JSONObject joParameter = JSON.parseObject(parameter);
+		JSONObject joPageInfo = JSON.parseObject(pageInfo);
+		
+		System.out.println(joParameter);
+		
+		System.out.println(joPageInfo);
+		
+		return joParameter;
 	}
 
 }
