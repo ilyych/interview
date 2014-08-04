@@ -1,0 +1,74 @@
+<div class="panel window" style="left: 605px; top: 149.5px; width: 300px; display: block; position: absolute; z-index: 9024;">
+	<div class="panel-header panel-header-noborder window-header" style="width: 300px;">
+		<div class="panel-title panel-with-icon">添加标注点</div>
+		<div class="panel-icon icon-save"></div>
+		<div class="panel-tool">
+			<a class="panel-tool-close" href="javascript:void(0)"></a>
+		</div>
+	</div>
+	<div title="" class="easyui-dialog panel-body panel-body-noborder window-body"
+		id="winAddPoi" style="width: 300px; height: 164px; overflow: hidden;"
+		data-options="iconCls:'icon-save', closed:true ">
+		<div class="panel" style="width: 300px; display: block;">
+			<div title="" class="panel-body panel-body-noheader panel-body-noborder dialog-content" style="padding: 10px; width: 300px; height: 144px;">
+				<form id="addMarkPointForm" action="/v4/mymap/addPoi" method="post">
+					<table cellpadding="5">
+						<tbody>
+							<tr>
+								<td>标注点</td>
+								<td><input name="name" class="easyui-textbox" id="poi_name"
+									type="text" data-options="required:true"></td>
+							</tr>
+							<tr>
+								<td>类别</td>
+								<td>
+									<input class="easyui-combobox combobox-f combo-f" id="poi_category" style="display: none;"
+										data-options="&#10;&#9;&#9;&#9;&#9;&#9;&#9; url:'/v4/system/locationCategory/list',&#10;&#9;&#9;&#9;&#9;&#9;&#9; method:'get',&#10;&#9;&#9;&#9;&#9;&#9;&#9; valueField:'id',&#10;&#9;&#9;&#9;&#9;&#9;&#9; textField:'locationCategoryName',&#10;&#9;&#9;&#9;&#9;&#9;&#9; panelHeight:'auto'&#10;&#9;&#9;&#9;&#9;&#9;&#9;"
+										comboname="category">
+									<span class="combo" style="width: 204px; height: 20px;">
+										<input class="combo-text validatebox-text" style="width: 186px; height: 20px; line-height: 20px;" type="text" autocomplete="off">
+										<span>
+											<span class="combo-arrow" style="height: 20px;"></span>
+										</span>
+										<input name="category" class="combo-value" type="hidden" value="">
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>描述</td>
+								<td><input name="description" class="easyui-textbox"
+									id="poi_description" type="text" data-options="multiline:true"></td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td><input name="latitude" id="poi_lat" type="hidden"
+									value="31.000"></td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td><input name="longitude" id="poi_lng" type="hidden"
+									value="120.000"></td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td><input type="submit" value="提交"></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div style="padding: 5px; text-align: center;">
+						<a class="easyui-linkbutton l-btn l-btn-small"
+							onclick="submitPoi()" href="javascript:void(0)" group=""><span
+							class="l-btn-left"><span class="l-btn-text">Submit</span></span></a>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="window-shadow" style="left: 605px; top: 149.5px; width: 300px; height: 200px; display: block; z-index: 9023;"></div>

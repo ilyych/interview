@@ -1,8 +1,5 @@
 package com.ztesoft.zsmart;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.nutz.mvc.annotation.Encoding;
 import org.nutz.mvc.annotation.IocBy;
 import org.nutz.mvc.annotation.Localization;

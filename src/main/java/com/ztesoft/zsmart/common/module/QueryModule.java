@@ -16,7 +16,6 @@ public class QueryModule {
 	public Object commonQuery(@Param("serviceName") String serviceName, 
 			@Param("parameter") String parameter, @Param("pageInfo") String pageInfo) {
 		
-		
 		JSONObject joParameter = JSON.parseObject(parameter);
 		JSONObject joPageInfo = JSON.parseObject(pageInfo);
 		
