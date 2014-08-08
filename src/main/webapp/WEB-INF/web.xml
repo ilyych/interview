@@ -42,7 +42,7 @@
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
-	
+	<!--  
 	<filter>
 		<filter-name>sitemesh</filter-name>
 		<filter-class>org.sitemesh.webapp.SiteMeshFilter</filter-class>
@@ -52,7 +52,7 @@
 		<filter-name>sitemesh</filter-name>
 		<url-pattern>*.jsp</url-pattern>
 	</filter-mapping>
-	
+	-->
 	<servlet>
         <servlet-name>DruidStatView</servlet-name>
         <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
