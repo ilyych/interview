@@ -1,4 +1,4 @@
-package com.ztesoft.zsmart.interview.module.entry;
+package com.ztesoft.zsmart.interview.entry.module;
 
 import javax.servlet.http.HttpServletRequest;
 
