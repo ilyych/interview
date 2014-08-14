@@ -20,8 +20,8 @@
 			<!-- #section:basics/navbar.layout.brand -->
 			<a href="#" class="navbar-brand">
 				<small>
-					<i class="fa fa-leaf"></i>
-					Ace Admin
+					<img alt="logo" style="width:143px;height:20px" src="${ctx}/image/zsmart.png">
+					Interview
 				</small>
 			</a>
 
