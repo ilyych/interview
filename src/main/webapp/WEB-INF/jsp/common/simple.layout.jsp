@@ -47,7 +47,7 @@
 <script type="text/javascript">
 var Z = Z || {};
 Z.CTX = "${ctx}";
-Z.WEBROOT = "http://<%=request.getServerName()%>:<%=request.getServerPort()%><%=request.getContextPath()%>";
+Z.WEBROOT = "<%=request.getScheme()%>://<%=request.getServerName()%>:<%=request.getServerPort()%><%=request.getContextPath()%>";
 </script>
 <link rel="stylesheet" href="${csspath}" type="text/css" />
 </head>
