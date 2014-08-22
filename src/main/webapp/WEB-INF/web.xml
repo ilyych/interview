@@ -4,6 +4,10 @@
 	version="2.5">
 
 	<display-name>interview</display-name>
+	
+	<listener>
+		<listener-class>com.ztesoft.zsmart.common.web.listener.TilesListener</listener-class>
+	</listener>
 
 	<filter>
 		<filter-name>DruidWebStatFilter</filter-name>
@@ -26,7 +30,23 @@
 		<filter-name>DruidWebStatFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!--  
+	<filter>
+	    <filter-name>sitemesh</filter-name>
+	    <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
+	    <init-param>
+	    	<param-name>configFile</param-name>
+	    	<param-value>/WEB-INF/sitemesh3.xml</param-value>
+	    </init-param>
+	</filter>
 
+    <filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	-->
+	
 	<filter>
 		<filter-name>nutz</filter-name>
 		<filter-class>org.nutz.mvc.NutFilter</filter-class>
@@ -42,17 +62,7 @@
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
-	<!--  
-	<filter>
-		<filter-name>sitemesh</filter-name>
-		<filter-class>org.sitemesh.webapp.SiteMeshFilter</filter-class>
-	</filter>
-	
-	<filter-mapping>
-		<filter-name>sitemesh</filter-name>
-		<url-pattern>*.jsp</url-pattern>
-	</filter-mapping>
-	-->
+
 	<servlet>
         <servlet-name>DruidStatView</servlet-name>
         <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>

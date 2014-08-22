@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@include file="/WEB-INF/jsp/common/head.jsp" %>
   	<body class="login-layout light-login">
   		<div class="main-container">
 			<div class="main-content">
@@ -57,4 +56,3 @@
     		</div>
     	</div>
     </body>
-<%@include file="/WEB-INF/jsp/common/foot.jsp" %>

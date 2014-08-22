@@ -1,12 +1,14 @@
 $(function() {
-	$("#cbRemeber").val();
-	
 	$("#btnLogin").click(function() {
 		var username = $("#txtUsername").val();
 		var password = $("#txtPassword").val();
-		var remember = $("#cbRemeber:checked");
-		
-		alert(username + ":" + password + ":" + remember);
+		$.getJSON(Z.WEBROOT + "/entry/login", {username:username, password:password}, loginCallback);
 	});
 	
+	function loginCallback(rtJson) {
+		var remember = $("#cbRemeber:checked");
+		if (remember.length > 0) {
+			
+		}
+	}
 });

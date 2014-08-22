@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="simple.layout" template="/WEB-INF/jsp/common/simple.layout.jsp">
+		<put-attribute name="title" value="title" />
+		<put-attribute name="content" value="" />
+	</definition>
+	
+	<definition name="entry.login" extends="simple.layout">
+		<put-attribute name="title" value="title.entry.login" />
+		<put-attribute name="content" value="/WEB-INF/jsp/entry/login.jsp" />
+	</definition>
+	
+	<definition name="main.layout" template="/WEB-INF/jsp/common/main.layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="navbar" value="/WEB-INF/jsp/common/main.navbar.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/common/main.sidebar.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/common/main.footer.jsp" />
+		<put-attribute name="scrollup" value="/WEB-INF/jsp/common/main.scrollup.jsp" />
+	</definition>
+	
+	<definition name="simple.simple" extends="main.layout">
+		<put-attribute name="title" value="title.simple.simple" />
+		<put-attribute name="content" value="/WEB-INF/jsp/simple/simple.jsp" />
+	</definition>
+</tiles-definitions>

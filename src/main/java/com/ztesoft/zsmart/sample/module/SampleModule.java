@@ -33,7 +33,7 @@ public class SampleModule {
 	}
 	
 	@At("/init")
-	@Ok("jsp:jsp.sample.sample")
+	@Ok("tiles:simple.simple")
 	public void initSample() {
 		
 	}

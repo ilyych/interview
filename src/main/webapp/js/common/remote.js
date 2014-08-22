@@ -9,7 +9,7 @@ if (typeof Z === 'undefined') {
  * @param pageInfo
  */
 Z.remoteQuery = function (serviceName, callback, params, pageInfo) {
-	var _url = g_WebRoot + "/commonQuery?" + Math.random();
+	var _url = Z.CTX + "/commonQuery?" + Math.random();
 	var _params = JSON.stringify(params);
 	var _pageInfo = JSON.stringify(pageInfo);
 	/*
@@ -32,4 +32,16 @@ Z.remoteQuery = function (serviceName, callback, params, pageInfo) {
 	function _failure (content) {
 		alert(content);
 	}
+};
+
+Z.remoteCall = function(url, callback, params) {
+	var _url = Z.CTX + url;
+	var _params = JSON.stringify(params);
+	$.ajax({
+		url : _url,
+		success : callback,
+		cache :false,
+		type : "POST",
+		dataType : "json"
+	});
 };
